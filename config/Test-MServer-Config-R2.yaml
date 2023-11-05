@@ -42,7 +42,7 @@ importLivestreamConfiguration:
 # The formats in which the filmlist should be saved to.
 # Possible are: JSON, OLD_JSON, JSON_COMPRESSED_XZ, OLD_JSON_COMPRESSED_XZ, JSON_COMPRESSED_GZIP, OLD_JSON_COMPRESSED_BZIP, JSON_COMPRESSED_GZIP, OLD_JSON_COMPRESSED_BZIP
 filmlistSaveFormats:
-  - JSON
+#  - JSON
   - OLD_JSON
 #  - JSON_COMPRESSED_XZ
 #  - OLD_JSON_COMPRESSED_XZ
@@ -53,7 +53,7 @@ filmlistSaveFormats:
 
 # The paths where which filmlist should be safed to.
 filmlistSavePaths:
-  JSON: target/filmlists/filmliste.json
+#  JSON: target/filmlists/filmliste.json
   OLD_JSON: target/filmlists/filmliste_old.json
 #  JSON_COMPRESSED_XZ: target/filmlists/filmliste.json.xz
 #  OLD_JSON_COMPRESSED_XZ: target/filmlists/filmliste_old.json.xz
@@ -65,7 +65,7 @@ filmlistSavePaths:
 # The paths where which diff film list should be safed to.
 # If not set no difference film lists will be safed.
 filmlistDiffSavePaths:
-  JSON: target/filmlists/filmliste_diff.json
+#  JSON: target/filmlists/filmliste_diff.json
   OLD_JSON: target/filmlists/filmliste_old_diff.json
 #  JSON_COMPRESSED_XZ: target/filmlists/filmliste_diff.json.xz
 #  OLD_JSON_COMPRESSED_XZ: target/filmlists/filmliste_old_diff.json.xz
@@ -75,7 +75,7 @@ filmlistDiffSavePaths:
 #  OLD_JSON_COMPRESSED_BZIP: target/filmlists/filmliste_old_diff.json.bz
 
 #Sets if a filmlist hash file should be written
-writeFilmlistHashFileEnabled: true
+writeFilmlistHashFileEnabled: false
 #The filmlist hash file path
 filmlistHashFilePath: target/filmlists/filmlist.hash
 
@@ -88,17 +88,12 @@ filmlistIdFilePath: target/filmlists/filmlist.id
 # import additional filmlist sources
 importFilmlistConfigurations :
     - active: false
-      path: "someCrawlerlist.json"
+      path: "https://verteiler1.mediathekview.de/Filmliste-akt.xz"
       format: OLD_JSON
       createDiff: false
       checkImportListUrl: false
     - active: false
-      path: "someMoreCrawlerlist.json"
-      format: OLD_JSON
-      createDiff: false
-      checkImportListUrl: false
-    - active: false
-      path: "https://verteiler1.mediathekview.de/filme-org.xz"
+      path: "https://c1.mvorg.de/filme-org.xz"
       format: OLD_JSON_COMPRESSED_XZ
       createDiff: true
       checkImportListUrl: true    
