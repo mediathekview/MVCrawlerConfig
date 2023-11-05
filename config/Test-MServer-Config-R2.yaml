@@ -87,12 +87,12 @@ filmlistIdFilePath: target/filmlists/filmlist.id
 
 # import additional filmlist sources
 importFilmlistConfigurations :
-    - active: false
+    - active: true
       path: "https://verteiler1.mediathekview.de/Filmliste-akt.xz"
-      format: OLD_JSON
+      format: OLD_JSON_COMPRESSED_XZ
       createDiff: false
       checkImportListUrl: false
-    - active: false
+    - active: true
       path: "https://c1.mvorg.de/filme-org.xz"
       format: OLD_JSON_COMPRESSED_XZ
       createDiff: true
@@ -166,7 +166,7 @@ senderConfigurations:
   FUNK:
     maximumUrlsPerTask: 99
   DW:
-    maximumSubpages: 20
+    maximumSubpages: 10
 
 # configure string variables
 crawlerApiParams:

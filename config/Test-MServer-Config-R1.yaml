@@ -87,12 +87,12 @@ filmlistIdFilePath: target/filmlists/filmlist.id
 
 # import additional filmlist sources
 importFilmlistConfigurations :
-    - active: false
+    - active: true
       path: "https://verteiler1.mediathekview.de/Filmliste-akt.xz"
-      format: OLD_JSON
+      format: OLD_JSON_COMPRESSED_XZ
       createDiff: false
       checkImportListUrl: false
-    - active: false
+    - active: true
       path: "https://c1.mvorg.de/filme-org.xz"
       format: OLD_JSON_COMPRESSED_XZ
       createDiff: true
@@ -102,7 +102,7 @@ importFilmlistConfigurations :
 checkImportListUrlMinSize: 5012
 
 # abort url checking after x sec
-checkImportListUrlTimeoutInSec: 1800
+checkImportListUrlTimeoutInSec: 3600
 
 #### Default crawler configurations ####
 # The maximum amount of URLs to be processed per task.
@@ -166,7 +166,7 @@ senderConfigurations:
   FUNK:
     maximumUrlsPerTask: 99
   DW:
-    maximumSubpages: 10
+    maximumSubpages: 30
 
 # configure string variables
 crawlerApiParams:
