@@ -31,12 +31,12 @@ senderIncluded:
 #        unit: HOURS
 
 # list of films to be ignored by crawler search
-ignoreFilmlistPath: "ignoreFilmlist.txt"
+ignoreFilmlistPath: "https://mediathekview.github.io/MVCrawlerConfig/ignoreFilmlist/ignoreFilmlist.txt"
 
 # list of livestreams to be added
 importLivestreamConfiguration: 
-  active: false
-  path: "live-streams.json"
+  active: true
+  path: "https://mediathekview.github.io/MVCrawlerConfig/livestream/live-streams.json"
   format: OLD_JSON
 
 # The formats in which the filmlist should be saved to.
