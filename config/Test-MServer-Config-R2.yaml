@@ -96,13 +96,13 @@ importFilmlistConfigurations :
       path: "https://c1.mvorg.de/filme-org.xz"
       format: OLD_JSON_COMPRESSED_XZ
       createDiff: true
-      checkImportListUrl: true    
+      checkImportListUrl: false
 
 # film url is consider invalid if the size is below the minSize
 checkImportListUrlMinSize: 5012
 
 # abort url checking after x sec
-checkImportListUrlTimeoutInSec: 1800
+checkImportListUrlTimeoutInSec: 3600
 
 #### Default crawler configurations ####
 # The maximum amount of URLs to be processed per task.
@@ -177,7 +177,7 @@ copySettings:
   # En- / disables FTP
   copyEnabled: false
 
-  # The paths where to safe the film list files.SrfTopicOverviewTask
+  # The paths where to safe the film list files.
   # WARNING: You can only set the path for film list formats you listed in "filmlistSaveFormats".
   # Required if enabled
   copyTargetFilePaths:

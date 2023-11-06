@@ -96,7 +96,7 @@ importFilmlistConfigurations :
       path: "https://c1.mvorg.de/filme-org.xz"
       format: OLD_JSON_COMPRESSED_XZ
       createDiff: true
-      checkImportListUrl: true    
+      checkImportListUrl: true
 
 # film url is consider invalid if the size is below the minSize
 checkImportListUrlMinSize: 5012
