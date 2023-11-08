@@ -102,7 +102,7 @@ importFilmlistConfigurations :
 checkImportListUrlMinSize: 5012
 
 # abort url checking after x sec
-checkImportListUrlTimeoutInSec: 3600
+checkImportListUrlTimeoutInSec: 10800
 
 #### Default crawler configurations ####
 # The maximum amount of URLs to be processed per task.
