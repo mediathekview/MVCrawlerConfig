@@ -24,7 +24,7 @@ senderIncluded:
   #- ARTE_PL
   #- ARTE_IT
   #- ARTE_ES
-  #- 3SAT
+  #- DREISAT
   #- FUNK
   #- KIKA
   - DW
@@ -170,13 +170,16 @@ senderConfigurations:
     maximumSubpages: 2
     maximumRequestsPerSecond: 8.0
   ZDF:
-    maximumRequestsPerSecond: 10.0
+    maximumRequestsPerSecond: 20.0
   FUNK:
     maximumUrlsPerTask: 99
   DW:
     maximumSubpages: 1
   SR:
     maximumSubpages: 1
+  DREISAT:
+    maximumSubpages: 1
+    maximumDaysForSendungVerpasstSection: 20
 
 # configure string variables
 crawlerApiParams:
