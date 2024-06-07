@@ -114,7 +114,7 @@ checkImportListUrlTimeoutInSec: 10800
 maximumUrlsPerTask: 50
 
 # The maximum duration in minutes a crawler may run.
-maximumCrawlDurationInMinutes: 120
+maximumCrawlDurationInMinutes: 600
 
 # Enables the topics search
 # maximumSubpages limits the depth of the topics search
