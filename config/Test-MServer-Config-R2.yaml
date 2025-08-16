@@ -98,11 +98,16 @@ filmlistIdFilePath: filmlists/filmlist.id
 # import additional filmlist sources
 importFilmlistConfigurations :
     - active: true
-      path: hist/Filme-org
+      path: "https://verteiler1.mediathekview.de/Filmliste-akt.xz"
+      format: OLD_JSON_COMPRESSED_XZ
+      createDiff: false
+      checkImportListUrl: false
+    - active: true
+      path: "hist/Filme-org"
       format: OLD_JSON
       createDiff: true
-      checkImportListUrl: true
-
+      checkImportListUrl: false
+      
 # film url is consider invalid if the size is below the minSize
 checkImportListUrlMinSize: 5012
 

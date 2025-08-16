@@ -95,12 +95,14 @@ writeFilmlistIdFileEnabled: true
 filmlistIdFilePath: filmlists/filmlist.id
 
 
+
+
 # import additional filmlist sources
 importFilmlistConfigurations :
     - active: true
-      path: hist/Filme-org
-      format: OLD_JSON
-      createDiff: true
+      path: "https://verteiler1.mediathekview.de/Filmliste-akt.xz"
+      format: OLD_JSON_COMPRESSED_XZ
+      createDiff: false
       checkImportListUrl: false
 
 # film url is consider invalid if the size is below the minSize
@@ -186,7 +188,7 @@ crawlerApiParams:
 #### COPY ####
 copySettings:
   # En- / disables FTP
-  copyEnabled: false
+  copyEnabled: true
 
   # The paths where to safe the film list files.
   # WARNING: You can only set the path for film list formats you listed in "filmlistSaveFormats".
