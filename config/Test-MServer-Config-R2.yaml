@@ -119,11 +119,11 @@ checkImportListUrlTimeoutInSec: 10800
 maximumUrlsPerTask: 50
 
 # The maximum duration in minutes a crawler may run.
-maximumCrawlDurationInMinutes: 600
+maximumCrawlDurationInMinutes: 120
 
 # Enables the topics search
 # maximumSubpages limits the depth of the topics search
-topicsSearchEnabled: true
+topicsSearchEnabled: false
 
 # The maximum amount of sub pages to be crawled.<br>
 # Example: If a Sendung overview side has 10 pages with videos for this Sendung and
@@ -182,7 +182,7 @@ senderConfigurations:
     maximumSubpages: 5
     maximumDaysForSendungVerpasstSection: 60
   PHOENIX:
-    maximumSubpages: 500
+    maximumSubpages: 50
 
 # configure string variables
 crawlerApiParams:
