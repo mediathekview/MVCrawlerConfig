@@ -144,11 +144,11 @@ socketTimeoutInSeconds: 60
 senderConfigurations:
   ARD:
     # Actually the ARD has a maximum of 6 days in the past
-    maximumDaysForSendungVerpasstSection: 1
+    maximumDaysForSendungVerpasstSection: 6
     #2,4,8 ok
     maximumUrlsPerTask: 32
     #10,20,40 ok
-    maximumSubpages: 40
+    maximumSubpages: 20
   ORF:
     #2,4,8 ok
     maximumUrlsPerTask: 40
@@ -182,7 +182,7 @@ senderConfigurations:
     maximumSubpages: 5
     maximumDaysForSendungVerpasstSection: 60
   PHOENIX:
-    maximumSubpages: 50
+    maximumSubpages: 5
 
 # configure string variables
 crawlerApiParams:
@@ -191,7 +191,7 @@ crawlerApiParams:
 #### COPY ####
 copySettings:
   # En- / disables FTP
-  copyEnabled: true
+  copyEnabled: false
 
   # The paths where to safe the film list files.
   # WARNING: You can only set the path for film list formats you listed in "filmlistSaveFormats".
