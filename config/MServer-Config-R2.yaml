@@ -178,10 +178,6 @@ senderConfigurations:
     maximumDaysForSendungVerpasstSection: 60
   PHOENIX:
     maximumSubpages: 5
-    
-# configure string variables
-crawlerApiParams:
-  FUNK_REQUEST_TOKEN: 137782e774d7cadc93dcbffbbde0ce9c
   
 #### COPY ####
 copySettings:

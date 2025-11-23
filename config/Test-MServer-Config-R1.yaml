@@ -179,10 +179,6 @@ senderConfigurations:
   PHOENIX:
     maximumSubpages: 10
 
-# configure string variables
-crawlerApiParams:
-  FUNK_REQUEST_TOKEN: 137782e774d7cadc93dcbffbbde0ce9c
-  
 #### COPY ####
 copySettings:
   # En- / disables FTP
