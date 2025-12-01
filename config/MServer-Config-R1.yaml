@@ -171,6 +171,8 @@ senderConfigurations:
     maximumSubpages: 10
   SR:
     maximumSubpages: 5
+  SRF:
+    maximumSubpages: 1
   DREISAT:
     maximumSubpages: 5
     maximumDaysForSendungVerpasstSection: 60

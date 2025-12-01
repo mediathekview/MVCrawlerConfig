@@ -148,17 +148,17 @@ senderConfigurations:
     #2,4,8 ok
     maximumUrlsPerTask: 40
   ARTE_DE:
-    maximumSubpages: 50
+    maximumSubpages: 8
   ARTE_FR:
-    maximumSubpages: 50
+    maximumSubpages: 8
   ARTE_EN:
-    maximumSubpages: 50
+    maximumSubpages: 6
   ARTE_PL:
-    maximumSubpages: 50
+    maximumSubpages: 6
   ARTE_IT:
-    maximumSubpages: 50
+    maximumSubpages: 6
   ARTE_ES:
-    maximumSubpages: 50
+    maximumSubpages: 6
   KIKA:
     maximumSubpages: 2
     maximumRequestsPerSecond: 8.0
@@ -171,6 +171,8 @@ senderConfigurations:
     maximumSubpages: 10
   SR:
     maximumSubpages: 5
+  SRF:
+    maximumSubpages: 1
   DREISAT:
     maximumSubpages: 5
     maximumDaysForSendungVerpasstSection: 60
