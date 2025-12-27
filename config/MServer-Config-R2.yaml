@@ -25,7 +25,6 @@ senderIncluded:
   - ARTE_IT
   - ARTE_ES
   - DREISAT
-  - FUNK
   - KIKA
   - DW
   - ORF
@@ -98,9 +97,9 @@ filmlistIdFilePath: filmlists/filmlist.id
 # import additional filmlist sources
 importFilmlistConfigurations :
     - active: true
-      path: hist/Filme-org
+      path: jdbc
       format: OLD_JSON
-      createDiff: true
+      createDiff: false
       checkImportListUrl: false
 
 # film url is consider invalid if the size is below the minSize
@@ -139,7 +138,7 @@ socketTimeoutInSeconds: 60
 senderConfigurations:
   ARD:
     # Actually the ARD has a maximum of 6 days in the past
-    maximumDaysForSendungVerpasstSection: 1
+    maximumDaysForSendungVerpasstSection: 6
     #2,4,8 ok
     maximumUrlsPerTask: 32
     #10,20,40 ok
@@ -160,7 +159,7 @@ senderConfigurations:
   ARTE_ES:
     maximumSubpages: 6
   KIKA:
-    maximumSubpages: 2
+    maximumSubpages: 3
     maximumRequestsPerSecond: 8.0
   ZDF:
     maximumRequestsPerSecond: 20.0
@@ -198,6 +197,12 @@ copySettings:
     #OLD_JSON: /copyTarget/filmliste_old_diff.json
     # JSON_COMPRESSED: /var/www/mediathekview/filmlisten/filmliste_diff.json.xz
     # OLD_JSON_COMPRESSED_XZ: copyTarget/filmliste_old_diff.json.xz
+
+mServerDbConfig:
+  active: true
+  url: "jdbc:postgresql://localhost:55432/crawler"
+  username: "crawler"
+  password: "secret"
 
 #### Logging ####
 logSettings:
