@@ -97,7 +97,7 @@ filmlistIdFilePath: filmlists/filmlist.id
 
 # import additional filmlist sources
 importFilmlistConfigurations :
-  - active: true
+  - active: false
     path: jdbc
     format: OLD_JSON
     createDiff: false
