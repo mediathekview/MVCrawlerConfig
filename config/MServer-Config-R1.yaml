@@ -52,7 +52,7 @@ importLivestreamConfiguration:
 # The formats in which the filmlist should be saved to.
 # Possible are: JSON, OLD_JSON, JSON_COMPRESSED_XZ, OLD_JSON_COMPRESSED_XZ, JSON_COMPRESSED_GZIP, OLD_JSON_COMPRESSED_BZIP, JSON_COMPRESSED_GZIP, OLD_JSON_COMPRESSED_BZIP
 filmlistSaveFormats:
-#  - JSON
+  - JSON
   - OLD_JSON
 #  - JSON_COMPRESSED_XZ
 #  - OLD_JSON_COMPRESSED_XZ
@@ -63,7 +63,7 @@ filmlistSaveFormats:
 
 # The paths where which filmlist should be safed to.
 filmlistSavePaths:
-#  JSON: target/filmlists/filmliste.json
+  JSON: filmlists/filmliste.json
   OLD_JSON: filmlists/Filmliste-akt
 #  JSON_COMPRESSED_XZ: target/filmlists/filmliste.json.xz
 #  OLD_JSON_COMPRESSED_XZ: target/filmlists/filmliste_old.json.xz
@@ -96,10 +96,10 @@ filmlistIdFilePath: filmlists/filmlist.id
 
 
 # import additional filmlist sources
-importFilmlistConfigurations :
-  - active: false
+importFilmlistConfigurations:
+  - active: true
     path: jdbc
-    format: OLD_JSON
+    format: JSON
     createDiff: false
     checkImportListUrl: false
 
@@ -129,41 +129,43 @@ maximumSubpages: 5
 maximumDaysForSendungVerpasstSection: 7
 
 # The maximum amount of days going to future will be crawled for the "Sendung Verpasst?" section.
-maximumDaysForSendungVerpasstSectionFuture: 0
+maximumDaysForSendungVerpasstSectionFuture: 3
 
 # The time in seconds before a socket connection should time out.
-socketTimeoutInSeconds: 60
+socketTimeoutInSeconds: 120
 
 #### Specific crawler configurations ####
 senderConfigurations:
   ARD:
     # Actually the ARD has a maximum of 6 days in the past
     maximumDaysForSendungVerpasstSection: 6
+    maximumDaysForSendungVerpasstSectionFuture: 6
     #2,4,8 ok
-    maximumUrlsPerTask: 32
+    #maximumUrlsPerTask: 8
     #10,20,40 ok
-    maximumSubpages: 1
+    maximumSubpages: 999
   ORF:
     #2,4,8 ok
     maximumUrlsPerTask: 4
   ARTE_DE:
-    maximumSubpages: 32
+    maximumSubpages: 64
   ARTE_FR:
-    maximumSubpages: 32
+    maximumSubpages: 64
   ARTE_EN:
-    maximumSubpages: 24
+    maximumSubpages: 48
   ARTE_PL:
-    maximumSubpages: 24
+    maximumSubpages: 48
   ARTE_IT:
-    maximumSubpages: 24
+    maximumSubpages: 48
   ARTE_ES:
-    maximumSubpages: 24
+    maximumSubpages: 48
   KIKA:
-    maximumSubpages: 12
+    maximumSubpages: 999
     maximumRequestsPerSecond: 8.0
   ZDF:
     maximumRequestsPerSecond: 20.0
-    maximumDaysForSendungVerpasstSection: 21
+    maximumDaysForSendungVerpasstSection: 30
+    maximumDaysForSendungVerpasstSectionFuture: 20
   FUNK:
     maximumUrlsPerTask: 99
   DW:
@@ -171,12 +173,13 @@ senderConfigurations:
   SR:
     maximumSubpages: 15
   SRF:
-    maximumSubpages: 4
+    maximumSubpages: 10
   DREISAT:
     maximumSubpages: 15
-    maximumDaysForSendungVerpasstSection: 60
+    maximumDaysForSendungVerpasstSection: 30
+    maximumDaysForSendungVerpasstSectionFuture: 20
   PHOENIX:
-    maximumSubpages: 15
+    maximumSubpages: 999
 
 #### COPY ####
 copySettings:
@@ -187,7 +190,7 @@ copySettings:
   # WARNING: You can only set the path for film list formats you listed in "filmlistSaveFormats".
   # Required if enabled
   copyTargetFilePaths:
-    # JSON: /var/www/mediathekview/filmlisten/filmliste.json
+    JSON: hist/Filme-org.json
     OLD_JSON: hist/Filme-org
     # JSON_COMPRESSED: /var/www/mediathekview/filmlisten/filmliste.json.xz
     # OLD_JSON_COMPRESSED_XZ: copyTarget/filmliste_old.json.xz
@@ -198,11 +201,14 @@ copySettings:
     # JSON_COMPRESSED: /var/www/mediathekview/filmlisten/filmliste_diff.json.xz
     # OLD_JSON_COMPRESSED_XZ: copyTarget/filmliste_old_diff.json.xz
 
-mServerDbConfig:
+databaseConfig:
   active: true
-  url: "jdbc:postgresql://localhost:55432/crawler"
+  url: "jdbc:postgresql://postgresMV:5432/crawler"
   username: "crawler"
   password: "secret"
+  refreshIntervalInDays: 7
+  checkUrlIntervalInDays: 3
+  batchSize: 2000
 
 #### Logging ####
 logSettings:
@@ -212,10 +218,10 @@ logSettings:
 
   # The log level for the log file.
   # Can be: DEBUG, INFO, WARN, ERROR, FATAL
-  logLevelFile: INFO
+  logLevelFile: DEBUG
 
   # Should be logged to console?
-  logActivateConsole: true
+  logActivateConsole: false
 
   # Should be logged to file?
   logActivateFile: true
@@ -238,4 +244,4 @@ logSettings:
 
   # The pattern of the file name of the archived log files.
   # See: https://logging.apache.org/log4j/2.0/manual/appenders.html#RollingFileAppender
-  logFileRollingPattern: logs/${date:yyyy-MM}/server-%d{MM-dd-yyyy}-%i.log
+  logFileRollingPattern: logs/${date:yyyy-MM}/server-%d{MM-dd-yyyy-HH}-%i.log
