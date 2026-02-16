@@ -149,16 +149,22 @@ senderConfigurations:
     maximumUrlsPerTask: 4
   ARTE_DE:
     maximumSubpages: 64
+    maximumRequestsPerSecond: 4
   ARTE_FR:
     maximumSubpages: 64
+    maximumRequestsPerSecond: 4
   ARTE_EN:
     maximumSubpages: 48
+    maximumRequestsPerSecond: 4
   ARTE_PL:
     maximumSubpages: 48
+    maximumRequestsPerSecond: 4
   ARTE_IT:
     maximumSubpages: 48
+    maximumRequestsPerSecond: 4
   ARTE_ES:
     maximumSubpages: 48
+    maximumRequestsPerSecond: 4
   KIKA:
     maximumSubpages: 999
     maximumRequestsPerSecond: 8.0
